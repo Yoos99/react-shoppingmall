@@ -17,6 +17,7 @@ function App() {
     }
   };
 
+  //한 번만 실행
   useEffect(() => {
     getProducts();
   }, []);
