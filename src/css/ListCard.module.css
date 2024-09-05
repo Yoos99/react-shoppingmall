@@ -1,0 +1,38 @@
+.ListCard {
+  padding: 0;
+}
+
+.ListCard > div {
+  border: 1px solid #ccc;
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.cardImg {
+  overflow: hidden;
+}
+
+/*div가 아니라 img 요소에 스타일을 적용해야 함 */
+.cardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discount {
+  position: absolute;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  background-color: goldenrod;
+  top: 20px;
+  left: 20px;
+  border-radius: 5px;
+  opacity: 0;
+}
+
+.ListCard:hover .discount {
+  opacity: 1;
+  transition: 0.3s;
+}
