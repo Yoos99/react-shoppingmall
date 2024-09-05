@@ -10,7 +10,7 @@ export default function ProductList({ products }) {
         {products.map((product) => (
           <ListCard key={product.id} product={product} />
           // products를 map으로 순회하며 ListCard 컴포넌트에 전달하여 렌더링
-          //listcard 컴포넌트에 product라는 이름으로 값 전달
+          //listcard 컴포넌트에 product라는 이름으로 값 전달 return 없는 이유는 map이 return을 대신함
         ))}
       </ul>
     </section>

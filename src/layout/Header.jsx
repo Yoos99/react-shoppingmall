@@ -1,33 +1,71 @@
+import { Link } from 'react-router-dom';
 import style from '../css/Header.module.css';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  useEffect(() => {
+    // 햄버그 메뉴가 열렸을 때 body에 overflow: hidden 스타일 적용
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, [isMenuOpen]);
+
+  const handleResize = () => {
+    const newIsMobile = window.innerWidth < 768;
+    setIsMobile(newIsMobile);
+    if (!newIsMobile) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     // module.css 사용법
     <header className={`${style.header} mw`}>
       <h1>
-        <a href="/">
+        <Link to="/">
+          {/*a태그 대신 Link 사용 */}
           <img className={style.logoImg} src="./img/logo.svg" alt="로고" />
-        </a>
+        </Link>
       </h1>
-      <nav className={style.on}>
+      {/* on을 사용하여 햄버그 메뉴를 클릭했을 때 나타나게 함 */}
+      <nav className={`${isMenuOpen ? style.on : ''}`}>
         <div className={style.gnb}>
-          <a href="#">SHOP</a>
-          <a href="#">BLOG</a>
-          <a href="#">OUR STORY</a>
+          <Link to="/shop">SHOP</Link>
+          <Link to="/blog">BLOG</Link>
+          <Link to="/our">OUR STORY</Link>
         </div>
         <div className={style.person}>
-          <a href="#">
+          <Link to="/">
             <i className="fa-solid fa-magnifying-glass"></i>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="/">
             <i className="fa-solid fa-cart-shopping"></i>
-          </a>
-          <a href="#">
+          </Link>
+          <Link to="/">
             <i className="fa-solid fa-user"></i>
-          </a>
+          </Link>
         </div>
       </nav>
-      <button className={style.btn}>
+      <button className={style.btn} onClick={toggleMenu}>
         <i className="fa-solid fa-bars"></i>
       </button>
     </header>
