@@ -1,4 +1,3 @@
-import React from 'react';
 import style from '../css/ShopPage.module.css';
 import ListCard from '../components/ListCard';
 export default function ShopPage({ products }) {

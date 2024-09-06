@@ -12,7 +12,7 @@ export default function Header() {
 
   useEffect(() => {
     // 햄버그 메뉴가 열렸을 때 body에 overflow: hidden 스타일 적용
-    if (isMenuOpen) {
+    if (isMobile) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'visible';
@@ -20,7 +20,7 @@ export default function Header() {
     return () => {
       document.body.style.overflow = 'visible';
     };
-  }, [isMenuOpen]);
+  }, [isMobile, isMenuOpen]);
 
   const handleResize = () => {
     const newIsMobile = window.innerWidth < 768;
@@ -54,13 +54,13 @@ export default function Header() {
           <Link to="/our">OUR STORY</Link>
         </div>
         <div className={style.person}>
-          <Link to="/">
+          <Link to="/search">
             <i className="fa-solid fa-magnifying-glass"></i>
           </Link>
-          <Link to="/">
+          <Link to="/cart">
             <i className="fa-solid fa-cart-shopping"></i>
           </Link>
-          <Link to="/">
+          <Link to="/mypage">
             <i className="fa-solid fa-user"></i>
           </Link>
         </div>

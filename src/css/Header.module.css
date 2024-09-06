@@ -22,7 +22,7 @@
 .header a {
   transition: 0.3s;
   color: #333;
-  text-decoration: none;
+  text-decoration: none; /* 밑줄제거 */
 }
 
 .header a:hover {
@@ -36,7 +36,9 @@
   display: none;
 }
 
-nav .on {
+/*important를 줘서 768px보다 작아진 상태에서도 햄버그 버튼이 클릭되면 display되게 해줌*/
+/*nav.on 처럼 붙여서 써야함. nav .on 하니깐 작동 안함. 왜지? => 띄우면 자손 중 클래스 선택자, 붙이면 요소 자체 클래스*/
+nav.on {
   display: block !important;
 }
 
@@ -61,12 +63,7 @@ nav .on {
   }
 
   .header > nav > div:nth-of-type(1) {
-    border-bottom: 1px solid #ccc;
-  }
-
-  .header > nav > *,
-  .header > nav > * > * {
-    border: 1px solid red;
+    flex-direction: column;
   }
 
   .btn {

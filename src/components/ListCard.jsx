@@ -11,9 +11,9 @@ export default function ListCard({ product }) {
         </div>
         <div className={style.cardInfo}>
           <p>{product.title}</p>
-          <p>{product.price}</p>
+          <p>{product.price}원</p>
         </div>
-        <span className={style.discount}>5%</span>
+        <span className={style.discount}>{product.discount}%</span>
       </div>
     </li>
   );

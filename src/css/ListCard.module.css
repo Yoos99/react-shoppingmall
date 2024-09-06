@@ -14,10 +14,11 @@
   overflow: hidden;
 }
 
-/*div가 아니라 img 요소에 스타일을 적용해야 함 */
+/*div 클래스가 아니라 img 클래스에 스타일을 적용해야 함 */
 .cardImg img {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
   object-fit: cover;
 }
 
