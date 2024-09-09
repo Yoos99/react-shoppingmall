@@ -5,7 +5,7 @@ export default function OurPage() {
   return (
     <div className="mw">
       <h2>Our page</h2>
-      <nav style={{ padding: '50px' }}>
+      <nav style={{ padding: '50px', textAlign: 'center' }}>
         <Link to="/our/ceo">Ceo</Link>
         <Link to="/our/history">History</Link>
         <Link to="/our/org">organization</Link>
