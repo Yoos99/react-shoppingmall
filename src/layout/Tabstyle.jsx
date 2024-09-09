@@ -1,11 +1,17 @@
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import Button from 'react-bootstrap/Button';
 
-export default function Tabstyle() {
+export default function TabStyle() {
   return (
-    <Tabs defaultActiveKey="onfo" id="fill-tab-example" className="mb-3" fill>
-      <Tab eventKey="home" title="상품설명">
-        Tab content for Home
+    <Tabs
+      defaultActiveKey="info"
+      id="fill-tab-example"
+      className="mb-3 mt-3"
+      fill
+    >
+      <Tab eventKey="info" title="상품설명">
+        Tab content for Home <Button variant="light">Light</Button>
       </Tab>
       <Tab eventKey="profile" title="상품 상세정보">
         Tab content for Profile
