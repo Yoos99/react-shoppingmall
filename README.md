@@ -2,6 +2,8 @@
 
 ### ghPages 등으로 배포하는 방법을 조금 더 찾아봐야겠다. url 설정해서 하면 될줄 알았는데 이미지가 안 불러와짐.
 
+![image](https://github.com/user-attachments/assets/706d55e5-15a2-40c3-8072-51ff807db4ed)
+
 - 첫 화면은 [/react](https://yoos99.github.io/react-shoppingmall/) react-shopping/이 붙어서 빈 내용으로 출력 -> 로고 누르면 사라져서 내용 출력
 - 그러나 이미지는 안 불러와짐. json server는 어떻게 받아와 지는지? 동작은 또 잘함. route path 부분을 조금 더 공부해야 할듯
 
