@@ -1,72 +1,60 @@
-.header {
-  border: 1px solid #ccc;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
+.Header {
+	border: 1px solid #ccc;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 0;
 }
-
 .logoImg {
-  width: 200px;
+	width: 200px;
 }
-
-.header > nav,
+.Header > nav,
 .gnb,
 .person {
-  display: flex;
-
-  gap: 1rem;
+	display: flex;
+	gap: 1rem;
 }
-
-.header a {
-  transition: 0.3s;
-  color: #333;
-  text-decoration: none; /* 밑줄제거 */
+.Header a {
+	transition: 0.3s;
+	color: #333;
 }
-
-.header a:hover {
-  color: goldenrod;
+.Header a:hover {
+	color: goldenrod;
 }
 
 .btn {
-  position: absolute;
-  right: 2rem;
-  top: 2rem;
-  display: none;
+	position: absolute;
+	right: 2rem;
+	top: 2rem;
+	display: none;
 }
-
-/*important를 줘서 768px보다 작아진 상태에서도 햄버그 버튼이 클릭되면 display되게 해줌*/
-/*nav.on 처럼 붙여서 써야함. nav .on 하니깐 작동 안함. 왜지? => 띄우면 자손 중 클래스 선택자, 붙이면 요소 자체 클래스*/
 nav.on {
-  display: block !important;
+	display: block !important;
 }
 
-/* 반응형 설정 */
-@media (max-width: 768px) {
-  .header > nav {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    text-align: center;
-    padding: 50px 0;
-  }
+@media (max-width: 800px) {
+	.Header > nav {
+		display: none;
+		position: fixed;
+		z-index: 1000;
+		top: 80px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: white;
+		text-align: center;
+		padding: 50px 0;
+	}
+	.Header > nav > div {
+		justify-content: center;
+		padding: 2rem;
+	}
+	.Header > nav > div:nth-of-type(1) {
+		flex-direction: column;
+	}
 
-  .header > nav > div {
-    justify-content: center;
-    padding: 2rem;
-  }
-
-  .header > nav > div:nth-of-type(1) {
-    flex-direction: column;
-  }
-
-  .btn {
-    display: block;
-  }
+	.btn {
+		display: block;
+	}
 }
